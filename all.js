@@ -6,8 +6,8 @@ $(document).ready(function () {
       function (data) {
         console.log(data);
 
-        var feedData = data.feed.entry;
-        var items = feedData.map(function (item) {
+        const feedData = data.feed.entry;
+        const items = feedData.map(function (item) {
           return {
             catename: item.gsx$catename.$t,
             catemin: item.gsx$catemin.$t,
@@ -15,7 +15,7 @@ $(document).ready(function () {
         });
 
         items.forEach(function (item) {
-          var Card = `
+          const Card = `
             <label for="${item.catemin}" class="cate1">
             <input type="checkbox" id="${item.catemin}" checked>
             <span class="arrow"></span>
@@ -25,7 +25,7 @@ $(document).ready(function () {
             </div>
             </label>
           `;
-          $('.test').append(Card);
+          $('#menu').append(Card);
         });
       }
     );
@@ -38,8 +38,8 @@ $(document).ready(function () {
       function (data) {
         console.log(data);
 
-        var feedData = data.feed.entry;
-        var items = feedData.map(function (item) {
+        const feedData = data.feed.entry;
+        const items = feedData.map(function (item) {
           return {
             name: item.gsx$name.$t,
             video: item.gsx$video.$t,
@@ -50,7 +50,7 @@ $(document).ready(function () {
         });
 
         items.forEach(function (item) {
-          var Card = `
+          const Card = `
             <li>
               <a href="#">${item.name}</a>
             </li>    
