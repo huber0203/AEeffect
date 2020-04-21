@@ -19,7 +19,6 @@ $(document).ready(function(){
         items.push(item);
         }
         
-        console.table(items);
           
            
         for(var i in items) {
