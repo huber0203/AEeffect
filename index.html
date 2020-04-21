@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects&Preset</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="all.js"></script>
+   
+    <script>
+         function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('myInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          //   li = document.getElementById('effect');
+            
+          li = ul.getElementsByTagName('li');
+          // Loop through all list items, and hide those who don't match the search query
+          let displayItemCounts = 0;
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+              displayItemCounts++
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+
+          const toggleInput = document.querySelector(`#${items[i].catemin}`);
+          if (displayItemCounts > 0) {
+            toggleInput.checked = false;
+          } else {
+            toggleInput.checked = true;
+          }
+        }
+
+    </script>
+    
+</head>
+<body>
+
+<div class="bg">
+<div class="container">
+    <div class="effects">
+        <p class="effectswin">特效總覽</p>
+
+    
+        <input type="text" class="search" placeholder="Search.." id="myInput" onkeyup="myFunction()">
+      
+
+        <div id="myUL">
+            
+            <div class="test"></div>
+
+            <label for="3DChannel" class="cate1"><input type="checkbox" id="3DChannel" checked><span class="arrow"></span><p class="catename">3D Channeaal</p>
+                <li><a href="#">Apple</a></li>
+                <li><a href="#">Banana</a></li>
+                <li><a href="#">Cat</a></li>
+                <li><a href="#">Dog</a></li>
+                <li><a href="#">Elephant</a></li>
+            </div>
+            </label>
+
+            <label for="toggle" class="cate1"><input type="checkbox" id="toggle" checked><span class="arrow"></span><p class="catename">選單</p>
+                <div class="toggle-box">
+                    <li><a href="#">Frog</a></li>
+                    <li><a href="#">Ios</a></li>
+                    <li><a href="#">Calvin</a></li>
+                    <li><a href="#">Christina</a></li>
+                    <li><a href="#">Cindy</a></li>
+                </div>
+                </label>
+
+        </div>
+
+
+    </div>
+    <div class="content">
+        content
+        <img style="width: 400px;" src="lala.png" alt="">
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
